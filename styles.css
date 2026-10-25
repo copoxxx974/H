@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+:root{--green:#70ffb4;--cyan:#5ceeff;--purple:#a28aff;--bg:#03070c}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:var(--bg);color:#e9fff5}
+body{min-height:100svh;overflow:hidden;font-family:'Share Tech Mono',monospace}
+#matrix{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.19;pointer-events:none}
+.scanlines{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.12;background:repeating-linear-gradient(to bottom,transparent 0 3px,#9bffe70c 4px)}
+.vignette{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 25%,#000b 100%)}
+.screen{position:relative;z-index:3;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 20px 52px;isolation:isolate}
+.topline,.bottomline{position:absolute;left:24px;right:24px;display:flex;justify-content:space-between;gap:14px;color:#76bca6;font-size:10px;letter-spacing:.13em}
+.topline{top:20px}.bottomline{bottom:17px;color:#477c70}
+.topline span{display:flex;align-items:center;gap:8px}.pulse{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:blink 1.3s infinite}.live b,.bottomline i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-right:6px}
+.planet-wrap{width:min(70vw,410px);height:min(70vw,410px);min-width:240px;min-height:240px;max-width:43vh;max-height:43vh;position:relative;display:grid;place-items:center;perspective:900px;flex-shrink:0;margin-top:8px}
+.planet{position:relative;width:67%;height:67%;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 31% 25%,#b3fff2 0,#31c6b3 7%,#116d73 25%,#09243b 60%,#020713 82%);box-shadow:inset -28px -9px 42px #000e,inset 7px 5px 19px #b6fff36e,0 0 30px #35ffe977,0 0 85px #00b5ff30;animation:float 6s ease-in-out infinite}
+.continents{position:absolute;inset:-15%;border-radius:50%;background:
+radial-gradient(ellipse at 31% 28%,#7dffc0 0 5%,transparent 5.7%),radial-gradient(ellipse at 42% 35%,#37e9a4 0 9%,transparent 9.7%),radial-gradient(ellipse at 61% 30%,#a0ffc5 0 5%,transparent 5.7%),radial-gradient(ellipse at 66% 54%,#4de2a5 0 10%,transparent 10.7%),radial-gradient(ellipse at 39% 67%,#6dffba 0 7%,transparent 7.7%),radial-gradient(ellipse at 23% 55%,#37bda1 0 5%,transparent 5.7%),repeating-linear-gradient(90deg,transparent 0 20px,#9affdf20 21px 22px,transparent 23px 37px);animation:rotateMap 13s linear infinite}
+.clouds{position:absolute;inset:-18%;border-radius:50%;background:repeating-linear-gradient(158deg,transparent 0 11px,#c8fff51d 12px 14px,transparent 15px 28px);filter:blur(1px);animation:clouds 17s linear infinite}
+.shadow{position:absolute;inset:0;border-radius:50%;background:linear-gradient(90deg,transparent 35%,#01040edb 95%);box-shadow:inset 0 0 22px #5fffe833}
+.planet-label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-17deg);font:800 clamp(12px,2vw,17px) Orbitron,sans-serif;letter-spacing:.22em;color:#d6fff4;text-shadow:0 0 12px #5effe7;white-space:nowrap;opacity:.84}
+.ring-light{position:absolute;width:76%;height:76%;border:1px solid #7dffe777;border-radius:50%;box-shadow:0 0 23px #3bffe72b,inset 0 0 20px #3bffe718}
+.orbit{position:absolute;border:1px solid #7dffe747;border-radius:50%;width:100%;height:36%;transform:rotate(-25deg);animation:orbitSpin 10s linear infinite}
+.orbit-b{width:93%;height:29%;transform:rotate(57deg);border-color:#9f8cff77;animation-duration:13s;animation-direction:reverse}
+.orbit-c{width:111%;height:46%;transform:rotate(22deg);border-style:dashed;border-color:#55eaff45;animation-duration:24s}
+.orbital-point{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px 4px #5ceeff85}.point-a{top:22%;right:18%}.point-b{bottom:20%;left:17%;background:var(--purple);box-shadow:0 0 15px 4px #a28aff85}
+.content{text-align:center;margin-top:clamp(0px,1.5vh,15px);width:min(100%,600px)}
+.overline{font-size:9px;color:var(--green);letter-spacing:.23em;margin:0 0 10px;animation:flicker 5s infinite}
+h1{font:900 clamp(28px,5.8vw,52px)/1.1 Orbitron,sans-serif;letter-spacing:.02em;margin:0;text-shadow:0 0 25px #4dffcf30}
+h1 span{display:block;color:transparent;-webkit-text-stroke:1px #9e8aff;text-shadow:0 0 22px #9576ff2b}
+.sub{font:10px Orbitron,sans-serif;letter-spacing:.22em;color:#7fa99e;margin:12px 0 17px}
+.terminal{font-size:11px;color:#8ca99f;margin:0 auto 19px;min-height:17px}.prompt{color:var(--green);margin-right:8px}.cursor{color:var(--green);animation:blink .8s steps(1) infinite}
+.discord{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-width:235px;padding:15px 18px;color:#03110e;text-decoration:none;background:linear-gradient(105deg,#70ffb4,#5ceeff 60%,#b2a1ff);border:1px solid #c7fff0;font:800 10px Orbitron,sans-serif;letter-spacing:.12em;box-shadow:0 0 25px #42ffe62b;transition:transform .2s,box-shadow .2s}
+.discord:hover{transform:translateY(-3px);box-shadow:0 0 38px #42ffe65c}.discord svg{width:18px;height:18px;fill:#03110e}.discord b{font-size:17px}.invite{color:#456e68;font-size:10px;letter-spacing:.14em;margin:11px 0 0}
+@keyframes rotateMap{from{transform:translateX(-12%) rotate(0)}to{transform:translateX(12%) rotate(360deg)}}@keyframes clouds{from{transform:translateX(-8%) rotate(0)}to{transform:translateX(8%) rotate(360deg)}}@keyframes orbitSpin{to{rotate:360deg}}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -6px}}@keyframes blink{50%{opacity:.35}}@keyframes flicker{0%,95%,100%{opacity:1}96%{opacity:.45}97%{opacity:.9}98%{opacity:.55}}
+@media(max-width:520px){.topline,.bottomline{left:12px;right:12px;font-size:8px;letter-spacing:.07em}.planet-wrap{min-width:220px;min-height:220px;max-height:35vh;max-width:35vh}.screen{padding-left:13px;padding-right:13px}.terminal{font-size:10px}.discord{min-width:215px}}
+@media(max-height:650px){.planet-wrap{max-height:32vh;max-width:32vh;min-width:180px;min-height:180px}.content{margin-top:0}.sub{margin:7px 0 10px}.terminal{margin-bottom:10px}.discord{padding:11px 16px}}
+@media(prefers-reduced-motion:reduce){.planet,.continents,.clouds,.orbit,.starfield{animation-duration:40s!important}}
